@@ -19,13 +19,13 @@
     <% if legal_url.present? %>
       <span>
         |
-        <%= link_to(t("footer.legal"), legal_url) %>
+        <%= link_to(t("footer.legal"), legal_url, target: "_blank", rel: "noopener") %>
       </span> 
     <% end %>
     <% if privpolicy_url.present? %>
       <span>
         |
-        <%= link_to(t("footer.privpolicy"), privpolicy_url)  %>
+        <%= link_to(t("footer.privpolicy"), privpolicy_url, target: "_blank", rel: "noopener")  %>
       </span>
     <% end %>
   </p>

@@ -238,7 +238,7 @@ de_DE:
   cookies:
     cookie_info: Diese Seite verarbeitet lediglich technisch notwendige Cookies.
     cookie_button: Verstanden!
-    policy: "Weitere Informationen zu den Cookies finden Sie in unserer <a href=\"%{privacy_link}\"><u>Datenschutzerklärung</u></a>."
+    policy: "Weitere Informationen zu den Cookies finden Sie in unserer <a href=\"%{privacy_link}\" target="_blank" rel="noopener"><u>Datenschutzerklärung</u></a>."
   copied: Kopiert
   copy: Kopieren
   date:
