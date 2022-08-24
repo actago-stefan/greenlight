@@ -102,7 +102,7 @@ class Room < ApplicationRecord
 
   # Generates a uid for the room and BigBlueButton.
   def setup
-    self.uid = random_room_uid
+    self.uid = random_room_uid_test
     self.bbb_id = unique_bbb_id
     self.moderator_pw = RandomPassword.generate(length: 12)
     self.attendee_pw = RandomPassword.generate(length: 12)
@@ -120,7 +120,7 @@ class Room < ApplicationRecord
     if name == "Interne Besprechungen"
       room_url_name = owner.name_room
       x = 1
-      if Room.exists?(uid: room_url_name)
+      break room_url_name unless Room.exists?(uid: room_url_name)
         loop do
           [room_url_name, x.to_s].join("-")
           x = x + 1
@@ -130,7 +130,7 @@ class Room < ApplicationRecord
     else
       room_url_name = name.tr(' ', '-')
       room_url_name.lowercase
-      if Room.exists?(uid: room_url_name)
+      break room_url_name unless Room.exists?(uid: room_url_name)
         loop do
           [room_url_name, x.to_s].join("-")
           x = x + 1
