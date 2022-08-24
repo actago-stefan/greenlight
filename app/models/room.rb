@@ -126,21 +126,25 @@ class Room < ApplicationRecord
       if Room.exists?(uid: room_url_name)
         room_url_name = [room_url_name, x.to_s].join("-")
         loop do
-          x = x.to_i + 1
+          x = x + 1
           break room_url_name unless Room.exists?(uid: room_url_name)
-          room_url_name.tr!(x-1, x.to_s)
+          xbefore = x - 1
+          room_url_name.tr!(xbefore.to_s, x.to_s)
         end
       end
     else
       room_url_name = name.tr(' ', '-')
       room_url_name.tr!('.', '-')
       room_url_name.downcase!
+      x = 1
       if Room.exists?(uid: room_url_name)
         room_url_name = [room_url_name, x.to_s].join("-")
         loop do
-          x = x.to_i + 1
+          x = x + 1
           break room_url_name unless Room.exists?(uid: room_url_name)
-          room_url_name.tr!(x-1, x.to_s)
+          xstr = x.to_s
+          xbefore = x - 1
+          room_url_name.tr!(xbefore.to_s, x.to_s)
         end
       end
     end
