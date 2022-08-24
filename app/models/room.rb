@@ -117,10 +117,13 @@ class Room < ApplicationRecord
   end
 
   def random_room_uid_test
+    full_chunk = SecureRandom.alphanumeric(9).downcase
+    room_url_name = [owner.name_chunk, full_chunk[0..2], full_chunk[3..5], full_chunk[6..8]].join("-")
+
     if name == "Interne Besprechungen"
       room_url_name = owner.name_room
       x = 1
-      break room_url_name unless Room.exists?(uid: room_url_name)
+      if Room.exists?(uid: room_url_name)
         loop do
           [room_url_name, x.to_s].join("-")
           x = x + 1
@@ -130,7 +133,7 @@ class Room < ApplicationRecord
     else
       room_url_name = name.tr(' ', '-')
       room_url_name.lowercase
-      break room_url_name unless Room.exists?(uid: room_url_name)
+      if Room.exists?(uid: room_url_name)
         loop do
           [room_url_name, x.to_s].join("-")
           x = x + 1
@@ -138,7 +141,8 @@ class Room < ApplicationRecord
         end
       end
     end
-    
+
+    room_url_name = room_url_name
   end
 
   # Generates a unique bbb_id based on uuid.
