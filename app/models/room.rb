@@ -132,7 +132,8 @@ class Room < ApplicationRecord
       end
     else
       room_url_name = name.tr(' ', '-')
-      room_url_name.lowercase
+      room_url_name = name.tr('.', '-')
+      room_url_name.downcase
       if Room.exists?(uid: room_url_name)
         loop do
           [room_url_name, x.to_s].join("-")
