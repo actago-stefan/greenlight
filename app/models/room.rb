@@ -121,17 +121,18 @@ class Room < ApplicationRecord
     room_url_name = [owner.name_chunk, full_chunk[0..2], full_chunk[3..5], full_chunk[6..8]].join("-")
 
     if name == "Interne Besprechungen"
-      room_url_name = owner.name_room
-      x = 1
-      if Room.exists?(uid: room_url_name)
-        room_url_name = [room_url_name, x.to_s].join("-")
-        loop do
-          x = x + 1
-          break room_url_name unless Room.exists?(uid: room_url_name)
-          room_url_name.chop!
-          room_url_name = [room_url_name, x.to_s].join("-")
-        end
-      end
+      #room_url_name = owner.name_room
+      #x = 1
+      #if Room.exists?(uid: room_url_name)
+      #  room_url_name = [room_url_name, x.to_s].join("-")
+      #  loop do
+      #    x = x + 1
+      #    break room_url_name unless Room.exists?(uid: room_url_name)
+      #    room_url_name.chop!
+      #    room_url_name.chop!
+      #    room_url_name = [room_url_name, x.to_s].join("-")
+      #  end
+      #end
     else
       room_url_name = name.tr(' ', '-')
       room_url_name.tr!('.', '-')
@@ -142,6 +143,7 @@ class Room < ApplicationRecord
         loop do
           x = x + 1
           break room_url_name unless Room.exists?(uid: room_url_name)
+          room_url_name.chop!
           room_url_name.chop!
           room_url_name = [room_url_name, x.to_s].join("-")
         end
