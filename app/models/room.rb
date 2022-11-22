@@ -136,12 +136,12 @@ class Room < ApplicationRecord
     else
       room_url_name = name.tr(' ', '-')
       room_url_name.tr!('.', '-')
-      room_url_name = name.tr('---', '-')
-      room_url_name = name.tr(':', '-')
-      room_url_name = name.tr('--', '-')
-      room_url_name = name.tr('ä', 'ae')
-      room_url_name = name.tr('ö', 'oe')
-      room_url_name = name.tr('ü', 'ue')
+      room_url_name.tr!('---', '-')
+      room_url_name.tr!(':', '-')
+      room_url_name.tr!('--', '-')
+      room_url_name.tr!('ä', 'ae')
+      room_url_name.tr!('ö', 'oe')
+      room_url_name.tr!('ü', 'ue')
       room_url_name.downcase!
       x = 1
       if Room.exists?(uid: room_url_name)
