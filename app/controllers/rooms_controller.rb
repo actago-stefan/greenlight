@@ -349,7 +349,7 @@ class RoomsController < ApplicationController
 
   def create_room_settings_string(options)
     room_settings = {
-      muteOnStart: options[:mute_on_join] == "0",
+      muteOnStart: options[:mute_on_join] == "1",
       requireModeratorApproval: options[:require_moderator_approval] == "1",
       anyoneCanStart: options[:anyone_can_start] == "1",
       joinModerator: options[:all_join_moderator] == "1",
