@@ -69,8 +69,7 @@ class Setting < ApplicationRecord
     when "Room Configuration Moderator Access Codes"
       Rails.configuration.moderator_codes_default
     when "Room Configuration Mute On Join"
-      #room_config_setting("mute-on-join")
-      "enabled"
+      room_config_setting("mute-on-join")
     when "Room Configuration Require Moderator"
       room_config_setting("require-moderator-approval")
     when "Room Configuration Allow Any Start"
