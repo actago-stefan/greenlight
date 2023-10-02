@@ -50,7 +50,7 @@ ENV VERSION_CODE=$version_code
 
 COPY --from=builder $RAILS_ROOT $RAILS_ROOT
 
-EXPOSE 80
+EXPOSE 3000
 
 # FIXME / to remove / https://github.com/nahi/httpclient/issues/445
 RUN cat /etc/ssl/certs/ca-certificates.crt \

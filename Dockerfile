@@ -57,7 +57,7 @@ RUN apk update \
 COPY --from=base $RAILS_ROOT $RAILS_ROOT
 
 # Expose port 80.
-EXPOSE 80
+EXPOSE 3000
 
 # Sets the footer of greenlight application with current build version
 ARG version_code
