@@ -184,6 +184,11 @@ class User < ApplicationRecord
     end
   end
 
+  def name_room
+    arr = name.split
+    roomname = [arr[0], arr[1][0]].join("-").downcase
+  end
+
   def greenlight_account?
     social_uid.nil?
   end

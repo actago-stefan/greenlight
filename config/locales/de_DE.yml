@@ -232,7 +232,7 @@ de_DE:
         valid: Gültig
       title: Nutzer verwalten
   add_to_google_calendar: "Zum Google Kalender hinzufügen"
-  bigbluebutton: actago BBB
+  bigbluebutton: actago meeting
   bigbluebutton_exception: "Ups, beim Start der Konferenz ist ein Fehler aufgetreten!"
   cancel: Abbrechen
   cookies:
@@ -299,7 +299,7 @@ de_DE:
     title: Eigenschaften
     rooms: Personalisierte Räume
     recordings: Keine Aufzeichnungen
-    designs: DSGVO-Konform
+    designs: DSGVO-konform
     authentication: Nutzerauthentifizierung
   footer:
     legal: Impressum
@@ -335,8 +335,8 @@ de_DE:
     search:
       start: Suche beginnen...
   landing:
-    about: "Die actago GmbH verwendet das OpenSource-Tool BigBlueButton, um eine DSGVO-konforme Umgebung für Videokonferenzen jeglicher Art zu schaffen. Mitarbeiter der actago können hier Ihre eigenen Räume erstellen, um Konferenzen abzuhalten. Teilnehmer können bestehenden Konferenzen über einen kurzen und bequemen Link beitreten."
-    welcome: Willkommen zu actago BBB.
+    about: "Die actago GmbH verwendet eine DSGVO-konforme Umgebung für Videokonferenzen jeglicher Art. Mitarbeiter der actago können hier ihre eigenen Räume erstellen, um Konferenzen abzuhalten. Teilnehmer können bestehenden Konferenzen über einen kurzen und bequemen Link beitreten."
+    welcome: Willkommen zu actago meeting.
     video: Schauen Sie sich unsere Anleitung zur Verwendung von Greenlight an
     upgrade: "Zeigen Sie mir, wie ich auf Version 2.0. update!"
     version: "Wir haben eine neue Version von Greenlight veröffentlicht, aber Ihre Datenbank ist damit nicht kompatibel."
@@ -470,7 +470,7 @@ de_DE:
     rename_room:
       name_placeholder: Neuen Raumnamen eingeben...
     share_access:
-      footer: "Wenn ein Raum mit einem Nutzer geteilt wird, erhält dieser Nutzer dadurch das Recht im Raum eine Konferenz zu starten und die Aufzeichnungen des Raums anzusehen."
+      footer: "Wenn ein Raum mit einem Nutzer geteilt wird, erhält dieser Nutzer dadurch das Recht im Raum eine Konferenz zu starten."
       list: Geteilt mit
       title: Raumzugang teilen
       save: Änderungen speichern
@@ -645,7 +645,7 @@ de_DE:
       reset_password: Nutzer-Passwort zurücksetzen
     delete:
       button: "Ja, ich möchte mein Konto löschen."
-      disclaimer: "Wenn Sie Ihr Konto löschen, können Sie es <b>NICHT</b> wiederherstellen. Alle mit Ihrem Konto verbundenen Informationen - wie Einstellungen, Räume und Aufzeichnungen - werden gelöscht."
+      disclaimer: "Wenn Sie Ihr Konto löschen, können Sie es <b>NICHT</b> wiederherstellen. Alle mit Ihrem Konto verbundenen Informationen - wie Einstellungen und Räume - werden gelöscht."
       subtitle: Konto endgültig löschen
       title: Konto löschen
     password:

@@ -102,7 +102,7 @@ class Room < ApplicationRecord
 
   # Generates a uid for the room and BigBlueButton.
   def setup
-    self.uid = random_room_uid
+    self.uid = random_room_uid_test
     self.bbb_id = unique_bbb_id
     self.moderator_pw = RandomPassword.generate(length: 12)
     self.attendee_pw = RandomPassword.generate(length: 12)
@@ -114,6 +114,51 @@ class Room < ApplicationRecord
     full_chunk = SecureRandom.alphanumeric(9).downcase
 
     [owner.name_chunk, full_chunk[0..2], full_chunk[3..5], full_chunk[6..8]].join("-")
+  end
+
+  def random_room_uid_test
+    full_chunk = SecureRandom.alphanumeric(9).downcase
+    room_url_name = [owner.name_chunk, full_chunk[0..2], full_chunk[3..5], full_chunk[6..8]].join("-")
+
+    if name == "Interne Besprechungen"
+      #room_url_name = owner.name_room
+      #x = 1
+      #if Room.exists?(uid: room_url_name)
+      #  room_url_name = [room_url_name, x.to_s].join("-")
+      #  loop do
+      #    x = x + 1
+      #    break room_url_name unless Room.exists?(uid: room_url_name)
+      #    room_url_name.chop!
+      #    room_url_name.chop!
+      #    room_url_name = [room_url_name, x.to_s].join("-")
+      #  end
+      #end
+    else
+      room_url_name = name.tr(' ', '-')
+      room_url_name.tr!('.', '-')
+      room_url_name.gsub!(':', '-')
+      room_url_name.gsub!('(', '-')
+      room_url_name.gsub!(')', '-')
+      room_url_name.gsub!('ä', 'ae')
+      room_url_name.gsub!('ö', 'oe')
+      room_url_name.gsub!('ü', 'ue')
+      room_url_name.gsub!('---', '-')
+      room_url_name.gsub!('--', '-')
+      room_url_name.downcase!
+      x = 1
+      if Room.exists?(uid: room_url_name)
+        room_url_name = [room_url_name, x.to_s].join("-")
+        loop do
+          x = x + 1
+          break room_url_name unless Room.exists?(uid: room_url_name)
+          room_url_name.chop!
+          room_url_name.chop!
+          room_url_name = [room_url_name, x.to_s].join("-")
+        end
+      end
+    end
+
+    room_url_name = room_url_name
   end
 
   # Generates a unique bbb_id based on uuid.

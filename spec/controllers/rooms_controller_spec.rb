@@ -182,9 +182,9 @@ describe RoomsController, type: :controller do
       @request.session[:user_id] = @owner.id
       name = Faker::Games::Pokemon.name
 
-      room_params = { name: name, mute_on_join: "1",
+      room_params = { name: name, mute_on_join: "0",
         require_moderator_approval: "1", anyone_can_start: "1", all_join_moderator: "1" }
-      json_room_settings = "{\"muteOnStart\":true,\"requireModeratorApproval\":true," \
+      json_room_settings = "{\"muteOnStart\":false,\"requireModeratorApproval\":true," \
         "\"anyoneCanStart\":true,\"joinModerator\":true,\"recording\":false}"
 
       post :create, params: { room: room_params }
